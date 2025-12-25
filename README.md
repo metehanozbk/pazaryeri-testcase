@@ -68,6 +68,7 @@ npm run storybook
 Bash
 
 npm run build
+
 🛡️ DevOps ve Kalite Kontrol
 Bir mühendislik yaklaşımı olarak, projenin her aşamasında kalite standartları korunmuştur:
 
