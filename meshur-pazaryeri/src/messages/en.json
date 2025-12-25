@@ -1,0 +1,10 @@
+{
+  "Index": {
+    "title": "Famous Local Products",
+    "description": "The freshest and most natural products at your door."
+  },
+  "Navigation": {
+    "home": "Home",
+    "favorites": "My Favorites"
+  }
+}
