@@ -1,13 +1,31 @@
-import { Product } from '@/types';
+/**
+ * Meşhur Pazaryeri - API Servis Katmanı
+ * Bu dosya ürün verilerini ve veri çekme fonksiyonlarını içerir.
+ */
 
-// Dokümandaki api.meshur.co/docs yapısına uygun mock 
+// TypeScript için Product arayüzünü tanımlıyoruz
+export interface Product {
+  id: string;
+  slug: string;
+  name: string;
+  price: number;
+  image: string;
+  region: string;
+  producer: string;
+  rating: number;
+  category: string;
+  description: string;
+}
+
+// Yerel (Mock) ürün verileri
 const MOCK_PRODUCTS: Product[] = [
   {
     id: '1',
     slug: 'aydin-inciri',
     name: 'Aydın Dağ İnciri',
     price: 285,
-    image: 'https://images.unsplash.com/photo-1595111162232-949ec308696b?q=80&w=800',
+    // Aydın Dağ İnciri için güncel görsel linki
+    image: 'http://googleusercontent.com/image_collection/image_retrieval/196281714237264526_0',
     region: 'Aydın',
     producer: 'Nazilli Yöresel',
     rating: 4.9,
@@ -19,7 +37,8 @@ const MOCK_PRODUCTS: Product[] = [
     slug: 'antep-fistigi',
     name: 'Gaziantep Duble Antep Fıstığı',
     price: 640,
-    image: 'https://images.unsplash.com/photo-1536620302334-9343063f1011?q=80&w=800',
+    // Local public/images/antep-fistigi.jpg yolundaki görsel
+    image: '/images/antep-fistigi.jpg',
     region: 'Gaziantep',
     producer: 'Şahinbey Kuruyemiş',
     rating: 4.8,
@@ -41,12 +60,12 @@ const MOCK_PRODUCTS: Product[] = [
 ];
 
 /**
- * Ürünleri getiren mock servis. 
- * Gerçek bir API isteğini (REST) simüle eder.
+ * Tüm ürünleri asenkron olarak getiren servis. 
+ * Gerçek bir API gecikmesini (delay) simüle eder.
  */
 export const getProducts = async (): Promise<Product[]> => {
-  // Gecikme ekleyerek Loading state'lerini test etmemizi sağlar
   return new Promise((resolve) => {
+    // 800ms gecikme ile veriyi döndürür (Loading state testi için)
     setTimeout(() => {
       resolve(MOCK_PRODUCTS);
     }, 800);
@@ -54,11 +73,14 @@ export const getProducts = async (): Promise<Product[]> => {
 };
 
 /**
- * ID bazlı ürün detayı getiren servis
+ * Slug değerine göre tek bir ürünün detayını getiren servis.
  */
 export const getProductBySlug = async (slug: string): Promise<Product | undefined> => {
   return new Promise((resolve) => {
     const product = MOCK_PRODUCTS.find((p) => p.slug === slug);
-    setTimeout(() => resolve(product), 300);
+    // 300ms gecikme ile ürünü veya undefined değerini döndürür
+    setTimeout(() => {
+      resolve(product);
+    }, 300);
   });
 };

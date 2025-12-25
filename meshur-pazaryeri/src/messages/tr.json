@@ -1,7 +1,16 @@
 {
   "Index": {
-    "title": "Meşhur Yöresel Lezzetler",
-    "description": "Doğrudan üreticisinden kapınıza...",
-    "featuredTitle": "Öne Çıkan Yöresel Lezzetler"
+    "title": "Meşhur Yöresel Ürünler",
+    "welcome": "Hoş Geldiniz",
+    "description": "En taze ve doğal ürünler doğrudan kapınıza.",
+    "featuredTitle": "Öne Çıkan Yöresel Lezzetler",
+    "favoritesTitle": "Favori Ürünlerim",
+    "favoritesDescription": "Beğendiğiniz tüm yöresel lezzetler burada saklanır.",
+    "noFavorites": "Henüz favori ürününüz yok.",
+    "exploreProducts": "Ürünleri Keşfet"
+  },
+  "Navigation": {
+    "home": "Ana Sayfa",
+    "favorites": "Favorilerim"
   }
 }

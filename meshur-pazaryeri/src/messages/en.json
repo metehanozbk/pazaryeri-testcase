@@ -1,7 +1,13 @@
 {
   "Index": {
     "title": "Famous Local Products",
-    "description": "The freshest and most natural products at your door."
+    "welcome": "Welcome",
+    "description": "The freshest and most natural products at your door.",
+    "featuredTitle": "Featured Local Delicacies",
+    "favoritesTitle": "My Favorites",
+    "favoritesDescription": "All the local flavors you like are stored here.",
+    "noFavorites": "You don't have any favorite products yet.",
+    "exploreProducts": "Explore Products"
   },
   "Navigation": {
     "home": "Home",
