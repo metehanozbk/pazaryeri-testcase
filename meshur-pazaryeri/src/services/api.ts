@@ -3,7 +3,7 @@
  * Bu dosya ürün verilerini ve veri çekme fonksiyonlarını içerir.
  */
 
-// TypeScript için Product arayüzünü tanımlıyoruz
+
 export interface Product {
   id: string;
   slug: string;
@@ -60,8 +60,7 @@ const MOCK_PRODUCTS: Product[] = [
 ];
 
 /**
- * Tüm ürünleri asenkron olarak getiren servis. 
- * Gerçek bir API gecikmesini (delay) simüle eder.
+ 
  */
 export const getProducts = async (): Promise<Product[]> => {
   return new Promise((resolve) => {
@@ -72,13 +71,12 @@ export const getProducts = async (): Promise<Product[]> => {
   });
 };
 
-/**
- * Slug değerine göre tek bir ürünün detayını getiren servis.
- */
+
+
 export const getProductBySlug = async (slug: string): Promise<Product | undefined> => {
   return new Promise((resolve) => {
     const product = MOCK_PRODUCTS.find((p) => p.slug === slug);
-    // 300ms gecikme ile ürünü veya undefined değerini döndürür
+    
     setTimeout(() => {
       resolve(product);
     }, 300);
